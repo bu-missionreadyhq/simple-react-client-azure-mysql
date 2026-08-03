@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 // Get the API_HOST from the .env file using Vite https://vite.dev/guide/env-and-mode#env-variables
-const API_HOST = import.meta.env.VITE_API_HOST;
+const API_HOST = import.meta.env.VITE_API_URL;
 console.log("API_HOST:", API_HOST);
 
 // Define the App component
