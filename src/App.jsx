@@ -42,18 +42,88 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Oceania Countries</h1>
-      {error && <p>{error}</p>}
-      <ul>
-        {countries.map((country, index) => (
-          <li key={index}>
-            <strong>{country.Name}</strong> - Life Expectancy:{" "}
-            {country.LifeExpectancy}
-          </li>
-        ))}
-      </ul>
-    </div>
+   <div
+  style={{
+    backgroundColor: "#014025",
+    minHeight: "100vh",
+    padding: "40px",
+    fontFamily: "Arial, sans-serif",
+    color: "#fff",
+  }}
+>
+  <h1
+    style={{
+      textAlign: "center",
+      marginBottom: "30px",
+      fontSize: "2rem",
+      letterSpacing: "1px",
+    }}
+  >
+    🌏 Oceania Countries
+  </h1>
+
+  {error && (
+    <p
+      style={{
+        color: "#ffb3b3",
+        textAlign: "center",
+        marginBottom: "20px",
+      }}
+    >
+      {error}
+    </p>
+  )}
+
+  <ul
+    style={{
+      listStyle: "none",
+      padding: 0,
+      margin: "0 auto",
+      maxWidth: "700px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "15px",
+    }}
+  >
+    {countries.map((country, index) => (
+      <li
+        key={index}
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          backgroundColor: "#02663d",
+          padding: "18px 24px",
+          borderRadius: "12px",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+          transition: "0.3s ease",
+          border: "1px solid rgba(255,255,255,0.1)",
+        }}
+      >
+        <span
+          style={{
+            fontSize: "1.1rem",
+            fontWeight: "600",
+          }}
+        >
+          {country.Name}
+        </span>
+
+        <span
+          style={{
+            backgroundColor: "#ffffff22",
+            padding: "8px 14px",
+            borderRadius: "20px",
+            fontWeight: "bold",
+            color: "#d7ffd9",
+          }}
+        >
+          {country.LifeExpectancy} yrs
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
   );
 };
 
